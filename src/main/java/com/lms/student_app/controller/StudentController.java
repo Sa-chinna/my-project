@@ -21,6 +21,8 @@ import com.lms.student_app.service.StudentService;
 @RestController
 @RequestMapping("/students")
 public class StudentController {
+	
+	
 
 	private final StudentService studentService;
 
@@ -34,6 +36,8 @@ public class StudentController {
         List<Student> students = studentService.getAllStudents();
         return new ResponseEntity<>(students, HttpStatus.OK);
     }
+	
+	// http://localhost:8080/student/id
 
 	 @GetMapping("/{id}")
 	    public ResponseEntity<Student> getStudentById(@PathVariable Long id) {
